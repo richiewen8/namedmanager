@@ -213,7 +213,7 @@ CREATE TABLE IF NOT EXISTS `language_avaliable` (
 --
 
 INSERT INTO `language_avaliable` (`id`, `name`) VALUES(1, 'en_us');
-
+INSERT INTO `language_avaliable` (`id`, `name`) VALUES(2, 'zh_CN');
 -- --------------------------------------------------------
 
 --
@@ -776,11 +776,155 @@ INSERT INTO `dns_record_types` (`id`, `type`, `user_selectable`, `is_standard`) 
 INSERT INTO `dns_record_types` (`id`, `type`, `user_selectable`, `is_standard`) VALUES (NULL, 'HINFO', '1', '1');
 INSERT INTO `dns_record_types` (`id`, `type`, `user_selectable`, `is_standard`) VALUES (NULL, 'LOC', '1', '1');
 
+--
+-- New Language
+--
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'username_namedmanager', '用户名');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'password_namedmanager', '密码');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'powerdns_mysql', '兼容PowerDNS的MySQL数据库（不稳定，alpha功能）');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'domain_records_ns_help', '下面是这个域所管理的所有名称服务器的列表。\r\n\r\n 这些都是自动填充在数据库中配置的域名，但是，如果你想把域名转授权，你可以添加自己的记录（例如，把internal.example.com设置为由另一个名称服务器处理）。');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'domain_records_mx_help', '注意，在这里配置系统的所有邮件服务器，所有的邮件都将默认投递到优先级最低的服务器。');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'domain_records_custom_help', '在这里配置所有剩余的记录--从下拉菜单中选择类型并输入合适的值');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'zone_internal', '使用内部应用程序的SQL数据库');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'server_primary_option_help', '使该服务器成为用于DNS SOA记录的主要服务器。');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'menu_configuration', '配置');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'menu_servers', '域名服务器');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'menu_servers_view', '查看域名服务器');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'menu_servers_add', '添加域名服务器');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'menu_domains', 'Domains/Zones');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'menu_domains_view', '查看域名');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'menu_domains_add', '添加域名');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'menu_overview', '概述');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'menu_logs', '更新日志');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'tbl_lnk_details', '详情');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'tbl_lnk_records', '域名记录');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'tbl_lnk_delete', '删除');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'tbl_lnk_delete', '删除');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'tbl_lnk_logs', '日志');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'domain_name', '域名');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'domain_serial', '域名序列号');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'domain_description', '描述');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'domain_details', '域名详情');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'domain_soa', '规范记录的开始');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'soa_hostmaster', '管理员邮箱地址');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'soa_serial', '域名序列号');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'soa_refresh', '刷新定时器');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'soa_retry', '刷新重试超时');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'soa_expire', '过期的定时器');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'soa_default_ttl', '默认记录 TTL');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'submit', '保存修改');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'domain_records_ns', '域名服务器配置');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'domain_records_mx', '邮件服务器配置');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'domain_records_custom', '主机记录配置');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'record_type', '类型');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'record_ttl', 'TTL');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'record_name', '名称');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'record_content', '内容');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'record_prio', '优先事项');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'server_primary', '主域名服务器');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'server_name', '域名服务器完整域名');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'server_description', '描述');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'server_type', '服务器类型');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'sync_status', '同步状态');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'server_details', '服务器详情');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'api_auth_key', 'API授权密匙');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'server_status', '服务器状态');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'sync_status_config', '配置状态');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'help_api_auth_key', '启用绑定配置生成脚本以与 NamedManager 对话的身份验证密钥。');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'sync_status_log', '日志状态');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'api', 'API (支持绑定)');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'config_zone_defaults', 'Zone默认配置');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'config_zone_database', 'Zone默认数据库');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'config_dateandtime', '日期和时间配置');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'timestamp', '时间戳');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'username', '用户名');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'log_type', '日志类型');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'log_contents', '日志内容');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'filter_searchbox', '搜索');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'filter_num_logs_rows', '最大日志行数');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'filter_id_server_name', '域名服务器');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'filter_id_domain', '域名');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'help_ipv4_autofill', '自动为域中所有具有指定域名后缀的 IP 创建 PTR 记录。');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'ipv4_help', '注意');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'help_ipv4_help', '如果您希望自动创建所有 IP-DNS 映射，此界面允许您通过指定网络地址和可选的 PTR 记录域来为 /24 网络范围设置反向 DNS 记录。');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'domain_standard', '标准域');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'domain_reverse_ipv4', '反向域 (IPv4)');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'domain_type', '域名类型');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'ipv4_network', 'IPv4 网络地址');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'ipv4_autofill', '自动填充 IP');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'ipv4_autofill_domain', '使用域自动填充 IP');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES('zh_CN', 'reverse_ptr', '反向PTR');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'file_bind_8', '绑定 8/9 兼容Zone文件');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'menu_domains_import', '导入域名');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'records_not_imported', '警告：没有记录导入到应用程序中！');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'record_import_guide', '下面显示了 NamedManager 从上传的区域文件中处理的所有记录。 仔细检查所有内容是否正确显示 - 可能有一些记录需要调整，或者一些不再需要（例如旧的 NS 记录）。\n\n 您可以选中/取消选中导入按钮以在导入中包含/排除记录 如果不再需要它们，请进行处理。');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'domain_delete', '删除域名');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'delete_confirm', '确认删除');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'config_api', 'API配置');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'config_miscellaneous', '其他配置');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'domain_records', '域名记录');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'record_header_type', '类型');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'record_header_ttl', 'TTL');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'record_header_prio', '优先事项');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'record_header_name', '名称/源');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'record_header_content', '内容/记录');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'record_header_import', '导入记录？');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'record_origin', '名称/源');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'unmatched_import', '无可匹敌的记录');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'import_notice_unmatched_rows', '并非所有记录都被成功导入，请查看以下未匹配的行 - 如果需要，你可以在上传前调整文件的格式，或者创建域名，然后手动添加这些遗漏的记录。');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'import_notice_no_unmatched_rows', '区域文件中的所有记录都已被识别并导入到上面的数组中。:-)');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'upload', '重新加载');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'import_upload_type', '导入源');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'import_upload_file', 'Zone File');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'help_admin_api_key', '用于验证位于域名服务器的脚本的密钥。');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'unmatched_import_help', 'Zonefile导入并不总是完美的，尤其是从人工编写的文本区域文件导入时。 如果有任何无法匹配的记录，它们将出现在下面以供手动处理。');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'server_record', '用作 NS 记录');
+INSERT INTO `language` (`language`, `label`,  `translation`) VALUES('zh_CN', 'server_record_option_help', '将此域名服务器作为公共 NS 记录添加到所有域。');
+INSERT INTO `language` (`language` ,`label` , `translation`) VALUES(  'zh_CN',  'ipv4_autofill_forward',  '创建转发记录');
+INSERT INTO `language` (`language` ,`label` , `translation`) VALUES(  'zh_CN',  'help_ipv4_autofill_forward',  '自动为指定域中的每个 IP 创建转发记录。');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'sync_status_zones', 'Zonefile 状态');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'ipv4_autofill_reverse_from_forward', '从现有记录创建记录');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'help_ipv4_autofill_reverse_from_forward', '自动查找要添加的 IP 范围的任何现有 A 记录，并在可能的情况下为其设置反向记录。');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'help_domain_group_selection', '选择该域所属的一个或多个组 - 组允许域位于特定的名称服务器组上，这对于隔离目的很有用（例如内部与外部名称服务器）。');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'config_logging', '日志记录配置');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'domain_groups', '域服务器组');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'server_group', '服务器组');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'menu_servers_groups', '管理服务器组');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'menu_servers_groups_view', '查看组');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'menu_servers_groups_add', '添加组');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'group_name', '名称');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'group_description', '描述');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'group_members', '服务器组成员');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'group_details', '服务器组详细信息');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'group_member_servers', '域名服务器成员');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'group_member_domains', '域名成员');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'group_delete', '删除组');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'server_domains', '服务器域设置');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'realname', 'Real Name');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'contact_email', 'Contact Email');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'lastlogin_time', '上次登录时间');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'lastlogin_ipaddress', '上次登录位置');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'tbl_lnk_permissions', '权限');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'user_permissions', '用户权限');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'id_user', '用户ID');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'user_view', '用户详细信息');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'user_password', '用户密码');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'user_info', '用户详细信息');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'user_options', '用户选项');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'user_delete', '删除用户');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'menu_admin_users', '用户管理');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'domain_reverse_ipv6', '反向域 (IPv6)');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'ipv6_network', 'IPv6 网络范围');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'ipv6_help', '注意');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'help_ipv6_help', '此界面允许您通过指定范围和 CIDR 值来为 IPv6 网络范围设置反向 DNS 记录。');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'id_group', '域名服务器组');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'config_amberstats', '协助开发商！');
+INSERT INTO `language` (`language`, `label`, `translation`) VALUES ('zh_CN', 'config_hosted', '托管云 DNS 服务');
 
 --
 -- Set Schema Version
 --
 
-UPDATE `config` SET `value` = '20171107' WHERE name='SCHEMA_VERSION' LIMIT 1;
+UPDATE `config` SET `value` = '20230628' WHERE name='SCHEMA_VERSION' LIMIT 1;
 
 
